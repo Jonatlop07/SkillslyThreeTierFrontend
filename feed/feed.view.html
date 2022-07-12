@@ -1,0 +1,43 @@
+<div class="bg-feed">
+  <div class="w-100">
+    <div class="row d-flex justify-content-center">
+      <skl-stories class="col-9"></skl-stories>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-5">
+        <div class="feed-card">
+          <p-tabView>
+            <p-tabPanel header="Publicaciones" leftIcon="pi pi-book">
+              <div class="bg-feed">
+                <div class="w-100 p-10 mx-auto">
+                  <div class="row">
+                    <div class="card">
+                      <div class="card-body">
+                        <h2 class="card-title text-feed">
+                          Publicaciones recientes de tu amigos
+                        </h2>
+                        <div class="dropdown-divider pb-3"></div>
+                        <div
+                          *ngFor="let post of foundPosts"
+                          class="row d-flex justify-content-center"
+                        >
+                          <skl-post
+                            [post]="post"
+                            [editable]="false"
+                            class="col-12"
+                          >
+                          </skl-post>
+                          <div class="dropdown-divider"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </p-tabPanel>
+          </p-tabView>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
